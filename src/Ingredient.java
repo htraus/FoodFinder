@@ -21,8 +21,8 @@ package edu.ilstu;
 				String commercialUnit, String homeUnit, double commercialAmount, double conversionRate)
 		{
 			this.ingredientName = ingredientName;
-			this.amount = commercialAmount * conversionRate;
 			this.conversionRatio = new Conversion(conversionRate, homeUnit, commercialUnit, ingredientName);
+			this.amount = this.conversionRatio.convert(commercialAmount);
 		}
 		
 		public void increaseAmount(double addedAmount)
@@ -53,6 +53,15 @@ package edu.ilstu;
 		{
 			this.ingredientName = nameIn;
 		}
-		
+
+		public boolean equals(Ingredient ing) {
+			boolean result = false;
+		    if (ing == null) result = false;
+		    else 
+		    	if (ing.getName() == this.getName())
+		    	result = true;
+		    return result;
+		}
+
 		
 }

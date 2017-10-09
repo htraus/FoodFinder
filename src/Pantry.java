@@ -1,3 +1,5 @@
+package edu.ilstu;
+
 /*
  * Filename: Pantry.java
  *

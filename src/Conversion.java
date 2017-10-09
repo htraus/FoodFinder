@@ -29,5 +29,11 @@ public class Conversion {
 		return commercialUnit;
 	}
 	
-
+	public void setCommericalUnit(String unitIn){
+		this.commercialUnit = unitIn;
+	}
+	
+	public void setHomeUnit(String unitIn){
+		this.homeUnit = unitIn;
+	}
 }
