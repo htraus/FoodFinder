@@ -23,6 +23,11 @@ public class Pantry {
 	public void addIngredient(Ingredient ing){
 		ingredientList.add(ing);
 	}
+	
+	public void addIngredient() {
+		Ingredient newIngredient = new Ingredient();
+		ingredientList.add(newIngredient);
+	}
 
 	public void deleteIngredient(Ingredient ing){
 		ingredientList.remove(ing);

@@ -1,5 +1,3 @@
-package edu.ilstu;
-
 public class Conversion {
 	private double conversionRate;
 	private String homeUnit;
