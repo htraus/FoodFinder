@@ -1,3 +1,5 @@
+package edu.ilstu;
+
 public class Conversion {
 	private double conversionRate;
 	private String homeUnit;
@@ -27,5 +29,11 @@ public class Conversion {
 		return commercialUnit;
 	}
 	
-
+	public void setCommericalUnit(String unitIn){
+		this.commercialUnit = unitIn;
+	}
+	
+	public void setHomeUnit(String unitIn){
+		this.homeUnit = unitIn;
+	}
 }
