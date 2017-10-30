@@ -39,7 +39,7 @@ package edu.ilstu;
 			return this.amount;
 		}
 		
-		public String getName()	
+		public String getName()
 		{
 			return this.ingredientName;
 		}
@@ -58,8 +58,8 @@ package edu.ilstu;
 			boolean result = false;
 		    if (ing == null) result = false;
 		    else 
-		    	if (ing.getName() == this.getName())
-		    	result = true;
+		    	if (ing.getName().equals(this.getName()))
+		    		result = true;
 		    return result;
 		}	
 }

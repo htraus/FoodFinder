@@ -9,7 +9,8 @@ public class RecipeBook
 	
 	RecipeBook(Recipe r)
 	{
-		recipeList = new ArrayList<Recipe>().add(r);
+		recipeList = new ArrayList<Recipe>();
+		recipeList.add(r);
 	}
 	
 	RecipeBook()
@@ -19,12 +20,12 @@ public class RecipeBook
 	
 	public void addRecipe(Recipe newRecipe)
 	{
-		recipeList.addRecipe;
+		recipeList.add(newRecipe);
 	}
 	
 	public void deleteRecipe(Recipe oldRecipe)
 	{
-		recipeList.delete(oldRecipe);
+		recipeList.remove(oldRecipe);
 	}
 	
 	public void sort()
@@ -34,6 +35,7 @@ public class RecipeBook
 	
 	public boolean save()
 	{
+		return true;
 		//Need database info first
 	}
 	
