@@ -35,7 +35,7 @@ public class Tags {
 	}
 	
 	public String displayTag (){
-		String str = (this.type) + (this.description);
+		String str = (this.type) + ": " + (this.description);
 		return str;
 	}
 	
