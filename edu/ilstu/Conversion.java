@@ -1,4 +1,4 @@
-package ilstu;
+package edu.ilstu;
 
 public class Conversion {
 	private double conversionRate;

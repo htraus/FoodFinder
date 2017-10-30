@@ -1,4 +1,4 @@
-package ilstu;
+package edu.ilstu;
 
 	/**
 	 * @author John Boomgarden

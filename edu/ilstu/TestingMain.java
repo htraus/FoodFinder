@@ -1,4 +1,4 @@
-package ilstu;
+package edu.ilstu;
 import java.util.ArrayList;
 
 /*

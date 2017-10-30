@@ -1,4 +1,4 @@
-package ilstu;
+package edu.ilstu;
 /*
  * Filename: Pantry.java
  *
@@ -32,6 +32,7 @@ public class Pantry {
 
 	public void deleteIngredient(Ingredient ing){
 		ingredientList.remove(ing);
+		System.out.println(ing.getName() + " has been deleted.");
 	}
 	
 	public Ingredient searchIngredient(Ingredient ing){
