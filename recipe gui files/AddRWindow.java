@@ -37,9 +37,10 @@ public class AddRWindow extends javax.swing.JFrame {
         ingrPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         IngrDisplayList = new javax.swing.JList<>();
-        addIngrButton = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        removeIngrButton = new javax.swing.JButton();
+        tagPanel = new javax.swing.JPanel();
         tagField = new javax.swing.JTextField();
+        addIngrButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,14 +106,14 @@ public class AddRWindow extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
         );
 
-        addIngrButton.setText("Add an Ingredient");
-        addIngrButton.addActionListener(new java.awt.event.ActionListener() {
+        removeIngrButton.setText("Remove an Ingredient");
+        removeIngrButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addIngrButtonActionPerformed(evt);
+                removeIngrButtonActionPerformed(evt);
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("(Optional) Enter any tags for your recipe as a comma list."));
+        tagPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("(Optional) Enter any tags for your recipe as a comma list."));
 
         tagField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,16 +121,23 @@ public class AddRWindow extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout tagPanelLayout = new javax.swing.GroupLayout(tagPanel);
+        tagPanel.setLayout(tagPanelLayout);
+        tagPanelLayout.setHorizontalGroup(
+            tagPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tagField)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tagPanelLayout.setVerticalGroup(
+            tagPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tagField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        addIngrButton1.setText("Add an Ingredient");
+        addIngrButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addIngrButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,11 +154,13 @@ public class AddRWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addIngrButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(addIngrButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(removeIngrButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(ingrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tagPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -160,13 +170,15 @@ public class AddRWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(addIngrButton))
+                        .addGap(28, 28, 28)
+                        .addComponent(addIngrButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeIngrButton))
                     .addComponent(ingrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(instrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tagPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmButton)
@@ -188,13 +200,17 @@ public class AddRWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_confirmButtonActionPerformed
 
-    private void addIngrButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addIngrButtonActionPerformed
+    private void removeIngrButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeIngrButtonActionPerformed
         new AddRIngredientWindow().setVisible(true);
-    }//GEN-LAST:event_addIngrButtonActionPerformed
+    }//GEN-LAST:event_removeIngrButtonActionPerformed
 
     private void tagFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tagFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tagFieldActionPerformed
+
+    private void addIngrButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addIngrButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addIngrButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,17 +249,18 @@ public class AddRWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> IngrDisplayList;
-    private javax.swing.JButton addIngrButton;
+    private javax.swing.JButton addIngrButton1;
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton confirmButton;
     private javax.swing.JPanel ingrPanel;
     private javax.swing.JPanel instrPanel;
     private javax.swing.JTextArea instrTextArea;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameField;
     private javax.swing.JPanel namePanel;
+    private javax.swing.JButton removeIngrButton;
     private javax.swing.JTextField tagField;
+    private javax.swing.JPanel tagPanel;
     // End of variables declaration//GEN-END:variables
 }
