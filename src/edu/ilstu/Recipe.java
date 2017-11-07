@@ -1,4 +1,4 @@
-package edu.ilstu;
+package foodfindergui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,30 @@ import java.util.List;
  */
 public class Recipe {
 	
+	private String name;
 	private String instructions;
 	private int rating;
 	private List<Ingredient> ingredients = new ArrayList<Ingredient>();
 	private List<User> users = new ArrayList<User>();
 	private List<Tags> tags = new ArrayList<Tags>();
+	
+	
+	public Recipe(String name, String instructions, int rating, List<Ingredient> ingredients, List<User> users, List<Tags> tags){
+		this.instructions = instructions;
+		this.rating = rating;
+		this.ingredients = ingredients;
+		this.users = users;
+		this.tags = tags;
+	}
+	
+	/**
+	 * This method returns the name in String format.
+	 * 
+	 * @return the name
+	 */
+	public String displayName(){
+		return name;
+	}
 	
 	/**
 	 * This method returns the instructions in String format.
@@ -85,7 +104,26 @@ public class Recipe {
 		return listOfTags;
 	}
 	
+	/**
+	 * This method returns all the information for a recipe in a single String
+	 * 
+	 * @return all recipe information
+	 */
+	public String displayRecipe(){
+		String recipe = null;
+		recipe = name + "\n" + rating + "\n" + tags + "\n" + users + "\n" + ingredients + "\n" + instructions;
+		return recipe;
+	}
+	
 	// Getters and setters for all instance variables
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
 	public void setInstructions(String instructions){
 		this.instructions = instructions;
 	}
